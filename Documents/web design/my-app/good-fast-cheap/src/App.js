@@ -11,7 +11,7 @@ import { toggleSwitch } from "./actions";
 function App() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const labels = ["fast", "good", "cheap"];
+  const labels = ["good", "fast", "cheap"];
   return (
     <Container height="100vh">
       <Stack
