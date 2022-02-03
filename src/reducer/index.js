@@ -6,14 +6,14 @@ const reducer = (state = initialState, action) => {
     case "TOGGLE_SWITCH":
       const newState = { ...state, [label]: !state[label] };
       if (!state[label]) {
-        if (label === "fast" && state.good) {
-          return { ...newState, cheap: false };
-        }
-        if (label === "cheap" && state.fast) {
+        if (label === "fast" && state.cheap) {
           return { ...newState, good: false };
         }
-        if (label === "good" && state.cheap) {
+        if (label === "cheap" && state.good) {
           return { ...newState, fast: false };
+        }
+        if (label === "good" && state.fast) {
+          return { ...newState, cheap: false };
         }
       }
       return newState;
