@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
           return { ...newState, fast: false };
         }
       }
-      break;
+      return newState;
     default:
       return state;
   }
