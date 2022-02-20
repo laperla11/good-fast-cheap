@@ -6,7 +6,7 @@ const FocusWithRef = () => {
   const item = { id: 1, label: "first" };
 
   const handleSubmit = (e) => {
-    // you don't need to listen keypress event for "enter", when user click on enter, handleSubmit is automatically triggereds
+    // you don't need to listen keypress event for "enter", when user click on enter, handleSubmit is automatically triggered
     e.preventDefault();
     console.log("ref---", myRef?.current?.value);
   };
