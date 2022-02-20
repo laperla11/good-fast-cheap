@@ -3,14 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+// this import is both development and production if you don't want to use redux-devtools on prodction use the below import
+// import {  composeWithDevToolsDevelopmentOnly } from "@redux-devtools/extension"
+import { composeWithDevTools } from "@redux-devtools/extension";
+import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 
-import reducer from "./reducer";
+import { reducers } from "./reducer";
 
 const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION_ && window.REDUX_DEVTOOLS_EXTENSION__()
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 ReactDOM.render(
