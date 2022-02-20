@@ -6,6 +6,9 @@ import Switch from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
 
+import Jokes from "./components/Jokes";
+import FocusWithRef from "./components/FocusWithRef";
+
 import { toggleSwitch } from "./actions";
 
 function App() {
@@ -19,7 +22,7 @@ function App() {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ bgcolor: "#cfe8fc", height: "100vh" }}
+        sx={{ bgcolor: "#cfe8fc" }}
       >
         <FormGroup>
           {labels.map((label) => {
@@ -39,6 +42,9 @@ function App() {
           })}
         </FormGroup>
       </Stack>
+      <Jokes />
+      <hr />
+      <FocusWithRef />
     </Container>
   );
 }
